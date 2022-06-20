@@ -1,6 +1,9 @@
 # Ares
 IW4X external cheat
 
+# Note
+This is still very early in development, there is not many features, no esp, aimbot, etc etc.
+
 # Memory Reading/Writing
 Ares uses [memory.dll](https://github.com/erfg12/memory.dll/)
 
