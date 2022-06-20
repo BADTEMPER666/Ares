@@ -1,5 +1,5 @@
 # Ares
-IW4X external cheat
+IW4X external cheat using C# .NET
 
 # Note
 This is still very early in development, there is not many features, no esp, aimbot, etc etc, so therefore there is no pre-compiled version for you to use
