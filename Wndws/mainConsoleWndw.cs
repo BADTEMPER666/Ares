@@ -48,7 +48,10 @@ namespace Ares.Wndws
                         try
                         {
                             Console.Clear();
-                            Console.WriteLine("Select weapon: (1.) Intervention 2.) Deagle");
+                            WriterUtility.resetOptions();
+                            WindowUtility.centerText("Select weapon:");
+                            WriterUtility.optionsWriter("Intervention");
+                            WriterUtility.optionsWriter("Deagle");
                             var weapon = Console.ReadLine();
                             switch (weapon)
                             {
