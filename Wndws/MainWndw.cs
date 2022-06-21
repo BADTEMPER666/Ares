@@ -26,15 +26,29 @@ namespace AresGUI.Wndws
 
         private void MainWndw_Load(object sender, EventArgs e)
         {
-            var cave = CodeCaveUtility.createCodeCave("iw4x", 1048);
-            caveAddressLbl.Text = cave.ToString("X"); //hex
+            if (Data.procOpen)
+            {
+                var cave = CodeCaveUtility.createCodeCave("iw4x", 1048);
+                caveAddressLbl.Text = cave.ToString("X"); //hex
+            }
+            else
+            {
+                caveAddressLbl.Text = ("iw4x not open");
+            }
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
-            var address = int.Parse(caveAddressLbl.Text, System.Globalization.NumberStyles.HexNumber);
-            CodeCaveUtility.releaseCave("iw4x", (IntPtr)address);
-            Close();
+            if (caveAddressLbl.Text == "iw4x not open")
+            {
+                Close();
+            }
+            else
+            {
+                var address = int.Parse(caveAddressLbl.Text, System.Globalization.NumberStyles.HexNumber);
+                CodeCaveUtility.releaseCave("iw4x", (IntPtr)address);
+                Close();
+            }
         }
 
         private void miniBtn_Click(object sender, EventArgs e)
@@ -46,32 +60,39 @@ namespace AresGUI.Wndws
         {
             if (e.KeyCode == Keys.Enter)
             {
-                var ammotType = unlimitedAmmoTxtBox.Text.ToLower();
-                switch (ammotType)
+                if (Data.procOpen)
                 {
-                    case "intervention":
-                        try
-                        {
-                            Memory.FreezeValue(Data.interventionAmmoPointer, "int", "30");
-                            msgLbl.Text = "Froze Intervention ammo";
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show($"Error freezing Intervention ammo pointer, error: {ex.Message}", Application.ProductName);
-                        }
-                        break;
+                    var ammotType = unlimitedAmmoTxtBox.Text.ToLower();
+                    switch (ammotType)
+                    {
+                        case "intervention":
+                            try
+                            {
+                                Memory.FreezeValue(Data.interventionAmmoPointer, "int", "30");
+                                msgLbl.Text = "Froze Intervention ammo";
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show($"Error freezing Intervention ammo pointer, error: {ex.Message}", Application.ProductName);
+                            }
+                            break;
 
-                    case "deagle":
-                        try
-                        {
-                            Memory.FreezeValue(Data.deagleAmmoPointer, "int", "30");
-                            msgLbl.Text = "Froze Deagle ammo";
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show($"Error freezing Deagle ammo pointer, error: {ex.Message}", Application.ProductName);
-                        }
-                        break;
+                        case "deagle":
+                            try
+                            {
+                                Memory.FreezeValue(Data.deagleAmmoPointer, "int", "30");
+                                msgLbl.Text = "Froze Deagle ammo";
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show($"Error freezing Deagle ammo pointer, error: {ex.Message}", Application.ProductName);
+                            }
+                            break;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("iw4x is not open, restart Ares when iw4x opens", Application.ProductName);
                 }
             }
         }
