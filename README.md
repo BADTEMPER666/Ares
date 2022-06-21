@@ -27,3 +27,9 @@ Ares creates a Code Cave on app startup which will be used for exploiting the ga
 * On the bottom half where the bytes are, right click and click "Goto addres", paste the Code Cave location again
 * You should now see the Code Cave exact location, and for now some extra memory that is empty
 And when you close Ares it will remove the Code Cave
+
+# Report Bugs
+Create a issue [here](https://github.com/romance999/Ares/issues), please be specific in the bug
+
+# Want to push code to the repo?
+Create a Pull Request[here](https://github.com/romance999/Ares/pulls), please be specific in what you changed in your Pull Request as well
