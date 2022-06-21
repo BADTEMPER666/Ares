@@ -1,6 +1,9 @@
 # Ares
 IW4X external cheat using C# .NET
 
+# Note
+This is still very early in development, there is not many features, no esp, aimbot, etc etc, so therefore there is no pre-compiled version for you to use
+
 # Features
 ------------------------------------------------------
 | Features | Working                                 |
@@ -8,9 +11,6 @@ IW4X external cheat using C# .NET
 | Unlimited Ammo | :white_check_mark:                |
 | Memory Code Caving | :white_check_mark:            |
 ------------------------------------------------------
-
-# Note
-This is still very early in development, there is not many features, no esp, aimbot, etc etc, so therefore there is no pre-compiled version for you to use
 
 # Memory Reading/Writing
 Ares uses [memory.dll](https://github.com/erfg12/memory.dll/)
