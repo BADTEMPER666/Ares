@@ -5,12 +5,11 @@ IW4X external cheat using C# .NET
 This is still very early in development, there is not many features, no esp, aimbot, etc etc, so therefore there is no pre-compiled version for you to use
 
 # Features
-------------------------------------------------------
+
 | Features | Working                                 |
 | ------- | -----------------------------------------|
 | Unlimited Ammo | :white_check_mark:                |
 | Memory Code Caving | :white_check_mark:            |
-------------------------------------------------------
 
 # Memory Reading/Writing
 Ares uses [memory.dll](https://github.com/erfg12/memory.dll/)
