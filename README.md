@@ -5,7 +5,7 @@ IW4X external cheat using C# .NET
 ------------------------------------------------------
 | Features | Working                                 |
 | ------- | -----------------------------------------|
-| Unlimited ammo Ammo | :white_check_mark:           |
+| Unlimited Ammo | :white_check_mark:                |
 | Memory Code Caving | :white_check_mark:            |
 ------------------------------------------------------
 
