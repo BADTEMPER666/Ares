@@ -26,6 +26,8 @@ namespace AresGUI.Wndws
 
         private void MainWndw_Load(object sender, EventArgs e)
         {
+            msgLbl.Text = "None";
+            weaponPnl.Hide();
             if (Data.procOpen)
             {
                 try
@@ -43,6 +45,74 @@ namespace AresGUI.Wndws
             else
             {
                 caveAddressLbl.Text = ("iw4x not open");
+            }
+        }
+
+        private void mainBtn_Click(object sender, EventArgs e)
+        {
+            weaponPnl.Hide();
+            mainPnl.Show();
+        }
+
+        private void weaponBtn_Click(object sender, EventArgs e)
+        {
+            mainPnl.Hide();
+            weaponPnl.Show();
+        }
+
+        private void configBtn_Click(object sender, EventArgs e)
+        {
+            mainPnl.Hide();
+            weaponPnl.Hide();
+        }
+
+        private void unlimitedAmmoWeaponComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Data.procOpen)
+            {
+                var ammotType = unlimitedAmmoWeaponComboBox.Text.ToLower();
+                switch (ammotType)
+                {
+                    case "intervention":
+                        try
+                        {
+                            Memory.FreezeValue(Data.interventionAmmoPointer, "int", "30");
+                            msgLbl.Text = "Froze Intervention ammo";
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error freezing Intervention ammo pointer, error: {ex.Message}", Application.ProductName);
+                        }
+                        break;
+
+                    case "deagle":
+                        try
+                        {
+                            Memory.FreezeValue(Data.deagleAmmoPointer, "int", "30");
+                            msgLbl.Text = "Froze Deagle ammo";
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error freezing Deagle ammo pointer, error: {ex.Message}", Application.ProductName);
+                        }
+                        break;
+
+                    case "none":
+                        try
+                        {
+                            Memory.UnfreezeValue(Data.interventionAmmoPointer);
+                            Memory.UnfreezeValue(Data.deagleAmmoPointer);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error unfreezing ammo, error: {ex.Message}", Application.ProductName);
+                        }
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("iw4x is not open, restart Ares when iw4x opens", Application.ProductName);
             }
         }
 
@@ -65,48 +135,8 @@ namespace AresGUI.Wndws
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void unlimitedAmmoTxtBox_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (Data.procOpen)
-                {
-                    var ammotType = unlimitedAmmoTxtBox.Text.ToLower();
-                    switch (ammotType)
-                    {
-                        case "intervention":
-                            try
-                            {
-                                Memory.FreezeValue(Data.interventionAmmoPointer, "int", "30");
-                                msgLbl.Text = "Froze Intervention ammo";
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show($"Error freezing Intervention ammo pointer, error: {ex.Message}", Application.ProductName);
-                            }
-                            break;
 
-                        case "deagle":
-                            try
-                            {
-                                Memory.FreezeValue(Data.deagleAmmoPointer, "int", "30");
-                                msgLbl.Text = "Froze Deagle ammo";
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show($"Error freezing Deagle ammo pointer, error: {ex.Message}", Application.ProductName);
-                            }
-                            break;
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("iw4x is not open, restart Ares when iw4x opens", Application.ProductName);
-                }
-            }
-        }
-
-        static void checkProcess()
+        void checkProcess()
         {
             Process[] processes = Process.GetProcessesByName("iw4x");
             if (processes.Length == 0)
@@ -120,9 +150,14 @@ namespace AresGUI.Wndws
             }
         }
 
-        private void writeToCave(string Data)
+        void writeToCave(string Data)
         {
             CodeCaveUtility.writeToCave("iw4x", (IntPtr)int.Parse(caveAddressLbl.Text, System.Globalization.NumberStyles.HexNumber), Encoding.ASCII.GetBytes(Data));
+        }
+
+        private void mainPnl_Click(object sender, EventArgs e)
+        {
+            mainPnl.Select();
         }
     }
 }
