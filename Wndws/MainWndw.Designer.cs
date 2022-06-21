@@ -31,20 +31,18 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWndw));
             this.topPnl = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.miniBtn = new Siticone.UI.WinForms.SiticoneButton();
+            this.msgLbl = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.caveAddressLbl = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.exitBtn = new Siticone.UI.WinForms.SiticoneButton();
+            this.miniBtn = new Siticone.UI.WinForms.SiticoneButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.siticoneButton3 = new Siticone.UI.WinForms.SiticoneButton();
+            this.label5 = new System.Windows.Forms.Label();
             this.unlimitedAmmoTxtBox = new Siticone.UI.WinForms.SiticoneTextBox();
             this.dragCtrl = new Siticone.UI.WinForms.SiticoneDragControl(this.components);
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.caveAddressLbl = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.msgLbl = new System.Windows.Forms.Label();
             this.topPnl.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +52,6 @@
             this.topPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.topPnl.Controls.Add(this.msgLbl);
             this.topPnl.Controls.Add(this.label6);
-            this.topPnl.Controls.Add(this.label2);
             this.topPnl.Controls.Add(this.caveAddressLbl);
             this.topPnl.Controls.Add(this.label4);
             this.topPnl.Controls.Add(this.exitBtn);
@@ -68,39 +65,49 @@
             this.topPnl.Size = new System.Drawing.Size(792, 33);
             this.topPnl.TabIndex = 28;
             // 
-            // label1
+            // msgLbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 17);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Ares";
+            this.msgLbl.AutoSize = true;
+            this.msgLbl.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.msgLbl.ForeColor = System.Drawing.Color.White;
+            this.msgLbl.Location = new System.Drawing.Point(400, 3);
+            this.msgLbl.Name = "msgLbl";
+            this.msgLbl.Size = new System.Drawing.Size(30, 17);
+            this.msgLbl.TabIndex = 34;
+            this.msgLbl.Text = "N/A";
             // 
-            // miniBtn
+            // label6
             // 
-            this.miniBtn.BackColor = System.Drawing.Color.Transparent;
-            this.miniBtn.BorderColor = System.Drawing.Color.Transparent;
-            this.miniBtn.BorderRadius = 4;
-            this.miniBtn.BorderThickness = 2;
-            this.miniBtn.CheckedState.Parent = this.miniBtn;
-            this.miniBtn.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.miniBtn.CustomImages.Parent = this.miniBtn;
-            this.miniBtn.FillColor = System.Drawing.Color.Transparent;
-            this.miniBtn.Font = new System.Drawing.Font("Sitka Text", 11.25F);
-            this.miniBtn.ForeColor = System.Drawing.Color.White;
-            this.miniBtn.HoveredState.Parent = this.miniBtn;
-            this.miniBtn.Image = ((System.Drawing.Image)(resources.GetObject("miniBtn.Image")));
-            this.miniBtn.ImageSize = new System.Drawing.Size(12, 12);
-            this.miniBtn.Location = new System.Drawing.Point(693, 3);
-            this.miniBtn.Name = "miniBtn";
-            this.miniBtn.PressedColor = System.Drawing.Color.White;
-            this.miniBtn.ShadowDecoration.Parent = this.miniBtn;
-            this.miniBtn.Size = new System.Drawing.Size(45, 27);
-            this.miniBtn.TabIndex = 28;
-            this.miniBtn.Click += new System.EventHandler(this.miniBtn_Click);
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(330, 3);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(64, 17);
+            this.label6.TabIndex = 33;
+            this.label6.Text = "Message:";
+            // 
+            // caveAddressLbl
+            // 
+            this.caveAddressLbl.AutoSize = true;
+            this.caveAddressLbl.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.caveAddressLbl.ForeColor = System.Drawing.Color.White;
+            this.caveAddressLbl.Location = new System.Drawing.Point(164, 3);
+            this.caveAddressLbl.Name = "caveAddressLbl";
+            this.caveAddressLbl.Size = new System.Drawing.Size(30, 17);
+            this.caveAddressLbl.TabIndex = 31;
+            this.caveAddressLbl.Text = "N/A";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(62, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(96, 17);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Cave Address:";
             // 
             // exitBtn
             // 
@@ -125,6 +132,51 @@
             this.exitBtn.TabIndex = 26;
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
+            // miniBtn
+            // 
+            this.miniBtn.BackColor = System.Drawing.Color.Transparent;
+            this.miniBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.miniBtn.BorderRadius = 4;
+            this.miniBtn.BorderThickness = 2;
+            this.miniBtn.CheckedState.Parent = this.miniBtn;
+            this.miniBtn.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.miniBtn.CustomImages.Parent = this.miniBtn;
+            this.miniBtn.FillColor = System.Drawing.Color.Transparent;
+            this.miniBtn.Font = new System.Drawing.Font("Sitka Text", 11.25F);
+            this.miniBtn.ForeColor = System.Drawing.Color.White;
+            this.miniBtn.HoveredState.Parent = this.miniBtn;
+            this.miniBtn.Image = ((System.Drawing.Image)(resources.GetObject("miniBtn.Image")));
+            this.miniBtn.ImageSize = new System.Drawing.Size(12, 12);
+            this.miniBtn.Location = new System.Drawing.Point(693, 3);
+            this.miniBtn.Name = "miniBtn";
+            this.miniBtn.PressedColor = System.Drawing.Color.White;
+            this.miniBtn.ShadowDecoration.Parent = this.miniBtn;
+            this.miniBtn.Size = new System.Drawing.Size(45, 27);
+            this.miniBtn.TabIndex = 28;
+            this.miniBtn.Click += new System.EventHandler(this.miniBtn_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(43, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(13, 17);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "|";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(3, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 17);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Ares";
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
@@ -135,21 +187,16 @@
             this.panel1.Size = new System.Drawing.Size(668, 389);
             this.panel1.TabIndex = 55;
             // 
-            // siticoneButton3
+            // label5
             // 
-            this.siticoneButton3.CheckedState.Parent = this.siticoneButton3;
-            this.siticoneButton3.CustomImages.Parent = this.siticoneButton3;
-            this.siticoneButton3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.siticoneButton3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.siticoneButton3.ForeColor = System.Drawing.Color.White;
-            this.siticoneButton3.HoveredState.Parent = this.siticoneButton3;
-            this.siticoneButton3.Location = new System.Drawing.Point(0, 470);
-            this.siticoneButton3.Name = "siticoneButton3";
-            this.siticoneButton3.ShadowDecoration.Parent = this.siticoneButton3;
-            this.siticoneButton3.Size = new System.Drawing.Size(148, 33);
-            this.siticoneButton3.TabIndex = 60;
-            this.siticoneButton3.Text = "Write Cave";
-            this.siticoneButton3.Click += new System.EventHandler(this.siticoneButton3_Click);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(10, 8);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(107, 17);
+            this.label5.TabIndex = 61;
+            this.label5.Text = "Unlimited Ammo";
             // 
             // unlimitedAmmoTxtBox
             // 
@@ -184,83 +231,6 @@
             // 
             this.dragCtrl.TargetControl = this.topPnl;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(43, 3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(13, 17);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "|";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(62, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 17);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "Cave Address:";
-            // 
-            // caveAddressLbl
-            // 
-            this.caveAddressLbl.AutoSize = true;
-            this.caveAddressLbl.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.caveAddressLbl.ForeColor = System.Drawing.Color.White;
-            this.caveAddressLbl.Location = new System.Drawing.Point(164, 3);
-            this.caveAddressLbl.Name = "caveAddressLbl";
-            this.caveAddressLbl.Size = new System.Drawing.Size(30, 17);
-            this.caveAddressLbl.TabIndex = 31;
-            this.caveAddressLbl.Text = "N/A";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(10, 8);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 17);
-            this.label5.TabIndex = 61;
-            this.label5.Text = "Unlimited Ammo";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(240, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(13, 17);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "|";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(260, 3);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 17);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "Message:";
-            // 
-            // msgLbl
-            // 
-            this.msgLbl.AutoSize = true;
-            this.msgLbl.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.msgLbl.ForeColor = System.Drawing.Color.White;
-            this.msgLbl.Location = new System.Drawing.Point(330, 3);
-            this.msgLbl.Name = "msgLbl";
-            this.msgLbl.Size = new System.Drawing.Size(30, 17);
-            this.msgLbl.TabIndex = 34;
-            this.msgLbl.Text = "N/A";
-            // 
             // MainWndw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -268,7 +238,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
             this.ClientSize = new System.Drawing.Size(792, 506);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.siticoneButton3);
             this.Controls.Add(this.topPnl);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -293,13 +262,11 @@
         private System.Windows.Forms.Panel panel1;
         public Siticone.UI.WinForms.SiticoneTextBox unlimitedAmmoTxtBox;
         private Siticone.UI.WinForms.SiticoneDragControl dragCtrl;
-        private Siticone.UI.WinForms.SiticoneButton siticoneButton3;
         private System.Windows.Forms.Label caveAddressLbl;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label msgLbl;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label2;
     }
 }

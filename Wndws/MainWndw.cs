@@ -28,8 +28,17 @@ namespace AresGUI.Wndws
         {
             if (Data.procOpen)
             {
-                var cave = CodeCaveUtility.createCodeCave("iw4x", 1048);
-                caveAddressLbl.Text = cave.ToString("X"); //hex
+                try
+                {
+                    var cave = CodeCaveUtility.createCodeCave("iw4x", 1048);
+                    caveAddressLbl.Text = cave.ToString("X"); //hex
+                    writeToCave("Ares Code Cave");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ares occured an error creating a Code Cave, the app will restart so it can the cave properly. error: {ex.Message}", Application.ProductName + " | PLEASE READ");
+                    Environment.Exit(0);
+                }
             }
             else
             {
@@ -111,9 +120,9 @@ namespace AresGUI.Wndws
             }
         }
 
-        private void siticoneButton3_Click(object sender, EventArgs e)
+        private void writeToCave(string Data)
         {
-            CodeCaveUtility.writeToCave("iw4x", (IntPtr)int.Parse(caveAddressLbl.Text, System.Globalization.NumberStyles.HexNumber), Encoding.ASCII.GetBytes("Ares Code Cave"));
+            CodeCaveUtility.writeToCave("iw4x", (IntPtr)int.Parse(caveAddressLbl.Text, System.Globalization.NumberStyles.HexNumber), Encoding.ASCII.GetBytes(Data));
         }
     }
 }
