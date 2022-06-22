@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,11 @@ namespace AresGUI.Wndws
 
         public MainWndw()
         {
+            if (Path.GetFileName(Path.GetDirectoryName(Environment.CurrentDirectory)) == "Temp")
+            {
+                MessageBox.Show("Ares cannot be run from WinRAR Please extract to a folder and try again.", "Ares", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Environment.Exit(0);
+            }
             InitializeComponent();
             checkProcess();
         }
@@ -32,7 +38,7 @@ namespace AresGUI.Wndws
             {
                 try
                 {
-                    var cave = CodeCaveUtility.createCodeCave("iw4x", 1048);
+                    var cave = CodeCave.createCodeCave("iw4x", 1048);
                     caveAddressLbl.Text = cave.ToString("X"); //hex
                     writeToCave("Ares Code Cave");
                 }
@@ -125,7 +131,7 @@ namespace AresGUI.Wndws
             else
             {
                 var address = int.Parse(caveAddressLbl.Text, System.Globalization.NumberStyles.HexNumber);
-                CodeCaveUtility.releaseCave("iw4x", (IntPtr)address);
+                CodeCave.releaseCave("iw4x", (IntPtr)address);
                 Close();
             }
         }
@@ -135,6 +141,10 @@ namespace AresGUI.Wndws
             this.WindowState = FormWindowState.Minimized;
         }
 
+        private void weaponPnl_Click(object sender, EventArgs e)
+        {
+            weaponPnl.Select();
+        }
 
         void checkProcess()
         {
@@ -152,12 +162,7 @@ namespace AresGUI.Wndws
 
         void writeToCave(string Data)
         {
-            CodeCaveUtility.writeToCave("iw4x", (IntPtr)int.Parse(caveAddressLbl.Text, System.Globalization.NumberStyles.HexNumber), Encoding.ASCII.GetBytes(Data));
-        }
-
-        private void mainPnl_Click(object sender, EventArgs e)
-        {
-            mainPnl.Select();
+            CodeCave.writeToCave("iw4x", (IntPtr)int.Parse(caveAddressLbl.Text, System.Globalization.NumberStyles.HexNumber), Encoding.ASCII.GetBytes(Data));
         }
     }
 }
