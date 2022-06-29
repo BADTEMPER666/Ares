@@ -103,11 +103,24 @@ namespace AresGUI.Wndws
                         }
                         break;
 
+                    case "m40a3":
+                        try
+                        {
+                            Memory.FreezeValue(Data.m40a3AmmoPointer, "int", "30");
+                            msgLbl.Text = "Froze M40A3 ammo";
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error freezing M40A3 ammo pointer, error: {ex.Message}", Application.ProductName);
+                        }
+                        break;
+
                     case "none":
                         try
                         {
                             Memory.UnfreezeValue(Data.interventionAmmoPointer);
                             Memory.UnfreezeValue(Data.deagleAmmoPointer);
+                            Memory.UnfreezeValue(Data.m40a3AmmoPointer);
                         }
                         catch (Exception ex)
                         {

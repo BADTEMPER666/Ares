@@ -35,9 +35,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.caveAddressLbl = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.exitBtn = new Siticone.UI.WinForms.SiticoneButton();
             this.miniBtn = new Siticone.UI.WinForms.SiticoneButton();
             this.label3 = new System.Windows.Forms.Label();
+            this.exitBtn = new Siticone.UI.WinForms.SiticoneButton();
             this.label1 = new System.Windows.Forms.Label();
             this.mainPnl = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -115,29 +115,6 @@
             this.label4.TabIndex = 30;
             this.label4.Text = "Cave Address:";
             // 
-            // exitBtn
-            // 
-            this.exitBtn.BackColor = System.Drawing.Color.Transparent;
-            this.exitBtn.BorderColor = System.Drawing.Color.Transparent;
-            this.exitBtn.BorderRadius = 4;
-            this.exitBtn.BorderThickness = 2;
-            this.exitBtn.CheckedState.Parent = this.exitBtn;
-            this.exitBtn.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.exitBtn.CustomImages.Parent = this.exitBtn;
-            this.exitBtn.FillColor = System.Drawing.Color.Transparent;
-            this.exitBtn.Font = new System.Drawing.Font("Sitka Text", 11.25F);
-            this.exitBtn.ForeColor = System.Drawing.Color.White;
-            this.exitBtn.HoveredState.Parent = this.exitBtn;
-            this.exitBtn.Image = ((System.Drawing.Image)(resources.GetObject("exitBtn.Image")));
-            this.exitBtn.ImageSize = new System.Drawing.Size(12, 12);
-            this.exitBtn.Location = new System.Drawing.Point(675, 3);
-            this.exitBtn.Name = "exitBtn";
-            this.exitBtn.PressedColor = System.Drawing.Color.White;
-            this.exitBtn.ShadowDecoration.Parent = this.exitBtn;
-            this.exitBtn.Size = new System.Drawing.Size(45, 27);
-            this.exitBtn.TabIndex = 26;
-            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
-            // 
             // miniBtn
             // 
             this.miniBtn.BackColor = System.Drawing.Color.Transparent;
@@ -170,7 +147,30 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(13, 17);
             this.label3.TabIndex = 29;
-            this.label3.Text = "|";
+            this.label3.Text = "-";
+            // 
+            // exitBtn
+            // 
+            this.exitBtn.BackColor = System.Drawing.Color.Transparent;
+            this.exitBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.exitBtn.BorderRadius = 4;
+            this.exitBtn.BorderThickness = 2;
+            this.exitBtn.CheckedState.Parent = this.exitBtn;
+            this.exitBtn.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.exitBtn.CustomImages.Parent = this.exitBtn;
+            this.exitBtn.FillColor = System.Drawing.Color.Transparent;
+            this.exitBtn.Font = new System.Drawing.Font("Sitka Text", 11.25F);
+            this.exitBtn.ForeColor = System.Drawing.Color.White;
+            this.exitBtn.HoveredState.Parent = this.exitBtn;
+            this.exitBtn.Image = ((System.Drawing.Image)(resources.GetObject("exitBtn.Image")));
+            this.exitBtn.ImageSize = new System.Drawing.Size(12, 12);
+            this.exitBtn.Location = new System.Drawing.Point(675, 3);
+            this.exitBtn.Name = "exitBtn";
+            this.exitBtn.PressedColor = System.Drawing.Color.White;
+            this.exitBtn.ShadowDecoration.Parent = this.exitBtn;
+            this.exitBtn.Size = new System.Drawing.Size(45, 27);
+            this.exitBtn.TabIndex = 26;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // label1
             // 
@@ -190,7 +190,6 @@
             this.mainPnl.Name = "mainPnl";
             this.mainPnl.Size = new System.Drawing.Size(548, 372);
             this.mainPnl.TabIndex = 55;
-            this.mainPnl.Click += new System.EventHandler(this.mainPnl_Click);
             // 
             // label5
             // 
@@ -301,6 +300,7 @@
             this.unlimitedAmmoWeaponComboBox.ItemHeight = 30;
             this.unlimitedAmmoWeaponComboBox.Items.AddRange(new object[] {
             "intervention",
+            "m40a3",
             "deagle",
             "none"});
             this.unlimitedAmmoWeaponComboBox.ItemsAppearance.Parent = this.unlimitedAmmoWeaponComboBox;
@@ -321,6 +321,7 @@
             this.weaponPnl.Name = "weaponPnl";
             this.weaponPnl.Size = new System.Drawing.Size(548, 372);
             this.weaponPnl.TabIndex = 56;
+            this.weaponPnl.Click += new System.EventHandler(this.weaponPnl_Click);
             // 
             // MainWndw
             // 
