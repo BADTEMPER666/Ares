@@ -35,6 +35,9 @@ Ares creates a Code Cave on app startup which will be used for exploiting the ga
 * You should now see the Code Cave exact location, and for now some extra memory that is empty
 And when you close Ares it will remove the Code Cave
 
+# Unlimited Ammo
+This only works in self hosted servers since most servers manage your ammo
+
 # Report Bugs
 Create a issue [here](https://github.com/romance999/Ares/issues), please be specific in the bug
 
