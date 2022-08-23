@@ -30,7 +30,7 @@ namespace AresGUI.Handler.Memory
 
         public static IntPtr createCodeCave(string process, int cavesize)
         {
-            var proc = Process.GetProcessesByName(process)[0];
+            var proc = Process.GetProcessesByName(process)[0]; // danger
             var hndProc = OpenProcess(0x0008 | 0x0020, 1, proc.Id); //get handle
             var caveAddress = VirtualAllocEx(hndProc, (IntPtr)null, cavesize, 0x1000 | 0x2000, 0x40); //allocate memory
             CloseHandle(hndProc);
